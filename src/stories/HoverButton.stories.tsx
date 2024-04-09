@@ -28,10 +28,10 @@ Primary.args = {
 };
 Primary.play = async ({ canvasElement}) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole('button', { name: /Click Me!/i });
+    const button = canvas.getByRole('button', { name: /Click Me and Hover Me!/i });
     // await expect(button).toBeInTheDocument();
     await userEvent.click(button);
-    await expect(button.innerHTML).toBe('Click Me!');
+    await expect(button.innerHTML).toBe('Click Me and Hover Me!');
     // await expect(button.innerHTML).not.toBeInTheDocument();
 
     await expect(button).toHaveStyle('background-color:#0070f3');

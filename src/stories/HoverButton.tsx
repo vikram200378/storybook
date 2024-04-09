@@ -11,7 +11,7 @@ export type Props = {
 };
 
 const HoverButton: React.FC<Props> = ({
-  initialLabel ='Click Me!',
+  initialLabel ='Click Me and Hover Me!',
   clickedLabel,
   width = 'auto',
   height = '40px',
