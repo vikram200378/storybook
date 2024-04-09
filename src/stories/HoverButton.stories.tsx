@@ -31,8 +31,6 @@ Primary.play = async ({ canvasElement}) => {
     const button = canvas.getByRole('button', { name: /Click Me!/i });
     // await expect(button).toBeInTheDocument();
     await userEvent.click(button);
-
-    console.log('Button clicked!');
     await expect(button.innerHTML).toBe('Click Me!');
     // await expect(button.innerHTML).not.toBeInTheDocument();
 
