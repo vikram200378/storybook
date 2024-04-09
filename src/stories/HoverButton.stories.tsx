@@ -20,7 +20,7 @@ const Template: StoryFn<Props> = (args) => <HoverButton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    initialLabel: 'Click Me!',
+    initialLabel: 'Click Me and Hover Me!',
     clickedLabel: 'Clicked',
     width: '120px',
     height: '40px',
