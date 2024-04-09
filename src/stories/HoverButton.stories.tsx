@@ -2,6 +2,7 @@
 import React from 'react';
 import { StoryFn, Meta} from '@storybook/react';
 import HoverButton, { Props } from './HoverButton';
+import { expect, userEvent, within } from '@storybook/test';
 
 export default {
     title: 'Example/HoverButton',
@@ -25,3 +26,15 @@ Primary.args = {
     height: '40px',
     backgroundColor: '#0070f3',
 };
+Primary.play = async ({ canvasElement}) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: /Click Me!/i });
+    // await expect(button).toBeInTheDocument();
+    await userEvent.click(button);
+
+    console.log('Button clicked!');
+    await expect(button.innerHTML).toBe('Click Me!');
+    // await expect(button.innerHTML).not.toBeInTheDocument();
+
+    await expect(button).toHaveStyle('background-color:#0070f3');
+}

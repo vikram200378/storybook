@@ -11,9 +11,8 @@ export type Props = {
 };
 
 const HoverButton: React.FC<Props> = ({
-  initialLabel,
+  initialLabel ='Click Me!',
   clickedLabel,
-
   width = 'auto',
   height = '40px',
   backgroundColor = '#0070f3',
@@ -27,7 +26,7 @@ const HoverButton: React.FC<Props> = ({
   };
 
   const handleClick = () => {
-    const newLabel = label === initialLabel ? clickedLabel : initialLabel;
+    const newLabel = label === initialLabel ? initialLabel  : clickedLabel;
     setLabel(newLabel);
   };
 
